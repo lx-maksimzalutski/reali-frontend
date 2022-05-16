@@ -5,15 +5,19 @@ import { ActionTypes, UserActions } from './user.actions';
 export function userReducer(state: UsersState = initialState, action: UserActions): UsersState {
   switch (action.type) {
     case ActionTypes.CREATE_USER: {
+      const newUser = {
+        id: new Date().getTime(),
+        ...action.payload,
+      };
       return {
         ...state,
-        users: [...state.users, action.payload],
+        users: [...state.users, newUser],
       };
     }
     case ActionTypes.UPDATE_USER:
       const newUserList = state.users.map((user: User) => {
-        if (user.id === action.payload.id) {
-          return action.payload;
+        if (user.id === action.userId) {
+          return { ...user, ...action.payload };
         }
         return user;
       });

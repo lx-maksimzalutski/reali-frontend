@@ -1,0 +1,23 @@
+<form class="form-body" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label class="label" for="username">User Name: </label>
+  <input class="input" id="username" type="text" formControlName="username" placeholder="UserName" />
+  <br />
+  <label class="label" for="name">Name: </label>
+  <input class="input" id="name" type="text" formControlName="name" placeholder="Name" />
+  <br />
+  <label class="label" for="email"> Email: </label>
+  <input class="input" id="email" type="text" formControlName="email" placeholder="Email" />
+  <br />
+  <div formGroupName="address">
+    <label class="label" for="street">Address: </label>
+    <div>
+      <input class="input" id="city" type="text" formControlName="city" placeholder="City" />
+      <input class="input" id="street" type="text" formControlName="street" placeholder="Street" />
+    </div>
+  </div>
+
+  <footer class="footer">
+    <button class="form-button" type="button" (click)="cancel()">Cancel</button>
+    <button class="form-button" type="submit" [disabled]="!userForm.valid">Submit</button>
+  </footer>
+</form>

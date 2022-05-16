@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { User } from '../user.interfaces';
+import { UserInput } from '../user.interfaces';
 
 export enum ActionTypes {
   UPDATE_USER = '[User] Update User',
@@ -9,12 +9,12 @@ export enum ActionTypes {
 
 export class UpdateUserAction implements Action {
   public readonly type = ActionTypes.UPDATE_USER;
-  constructor(public payload: User) {}
+  constructor(public userId: number, public payload: UserInput) {}
 }
 
 export class CreateUserAction implements Action {
   public readonly type = ActionTypes.CREATE_USER;
-  constructor(public payload: User) {}
+  constructor(public payload: UserInput) {}
 }
 
 export class DeleteUserAction implements Action {

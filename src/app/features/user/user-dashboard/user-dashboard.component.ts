@@ -4,6 +4,7 @@ import { RootState } from '../../../store/root-store.module';
 import { User } from '../user.interfaces';
 import { ActionTypes } from '../store/user.actions';
 import { Router } from '@angular/router';
+import { selectUsers } from '../store/user.selectors';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -14,11 +15,9 @@ export class UserDashboardComponent {
   public users: User[] = [];
 
   constructor(private store: Store<RootState>, private router: Router) {
-    this.store
-      .select((state) => state.users.users)
-      .subscribe((users) => {
-        this.users = users;
-      });
+    this.store.select(selectUsers).subscribe((users) => {
+      this.users = users;
+    });
   }
 
   public deleteUser(userId: number) {

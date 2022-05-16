@@ -1,0 +1,26 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.form-button {
+  padding: 10px 20px;
+}

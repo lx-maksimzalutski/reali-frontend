@@ -1,5 +1,4 @@
-<!--
-<div>
+<div *ngIf="selectedUserInfo">
   <h2>Update User</h2>
-  <app-user-form (userSubmit)='updateUser($event)' [user]='user'></app-user-form>
-</div>-->
+  <app-user-form (userSubmit)="updateUser($event)" [user]="selectedUserInfo"></app-user-form>
+</div>

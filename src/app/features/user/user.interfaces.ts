@@ -6,7 +6,7 @@ export interface User {
   address: Address;
 }
 
-export interface UserCreateInput {
+export interface UserInput {
   name: string;
   username: string;
   email: string;
