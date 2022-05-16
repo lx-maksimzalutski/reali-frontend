@@ -1,0 +1,6 @@
+<div>
+  <div *ngFor="let user of users">
+    {{ user.name }} <button (click)="deleteUser(user.id)">Delete</button>
+    <button (click)="editUser(user.id)">Edit</button>
+  </div>
+</div>
