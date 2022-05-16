@@ -28,7 +28,6 @@ export class UserEditComponent implements OnInit {
         }),
       )
       .subscribe((user: User | undefined) => {
-        debugger;
         this.selectedUserInfo = user || null;
       });
   }

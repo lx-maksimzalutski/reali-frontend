@@ -20,7 +20,6 @@ export class UserFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    debugger;
     const initialData = this.user || {
       username: '',
       name: '',
