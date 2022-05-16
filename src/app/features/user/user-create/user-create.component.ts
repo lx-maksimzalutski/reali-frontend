@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UserInput } from '../user.interfaces';
 import { Store } from '@ngrx/store';
 import { RootState } from '../../../store/root-store.module';
-import { ActionTypes } from '../store/user.actions';
+import { CreateUserAction } from '../store/user.actions';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,11 +14,7 @@ export class UserCreateComponent {
   constructor(private store: Store<RootState>, private router: Router) {}
 
   public createUser(userInfo: UserInput) {
-    this.store.dispatch({
-      type: ActionTypes.CREATE_USER,
-      payload: userInfo,
-    });
-
+    this.store.dispatch(new CreateUserAction(userInfo));
     this.router.navigate(['/users']);
   }
 }

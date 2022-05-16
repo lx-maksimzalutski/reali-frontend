@@ -27,12 +27,12 @@ export function userReducer(state: UsersState = initialState, action: UserAction
       };
 
     case ActionTypes.DELETE_USER:
-      const newUserList2 = state.users.filter((user: User) => {
+      const users = state.users.filter((user: User) => {
         return user.id !== action.id;
       });
       return {
         ...state,
-        users: newUserList2,
+        users: users,
       };
     default:
       return state;
