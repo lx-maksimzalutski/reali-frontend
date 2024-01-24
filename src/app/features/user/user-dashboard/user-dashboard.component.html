@@ -1,0 +1,21 @@
+<section class="wrapper">
+  <div class="user-card" *ngFor="let user of users">
+    <header class="header">
+      <span>{{ user.name }}</span>
+      <div>
+        <mat-icon class="icon-button" (click)="editUser(user.id)" aria-hidden="false" aria-label="Edit User">
+          edit
+        </mat-icon>
+        <mat-icon class="icon-button" (click)="deleteUser(user.id)" aria-hidden="false" aria-label="Delete User">
+          clear
+        </mat-icon>
+      </div>
+    </header>
+
+    <div class="content">
+      <span class="user-info">User Name: {{ user.username }}</span>
+      <span class="user-info">Address: {{ user.address.city }}{{ user.address.street }}</span>
+      <span class="user-info">Email: {{ user.email }}</span>
+    </div>
+  </div>
+</section>
